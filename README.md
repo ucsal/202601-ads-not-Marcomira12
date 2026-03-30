@@ -1,3 +1,5 @@
+O código original sem as correções foi apagado por conta de erro no push no github apagando os históricos originais, o cógio em questão disponibilizado foi desenvolvido em repositório a parte com os detalhamentos e passos a passos no que foi densenvolvido e refatorado segue o link do repositório https://github.com/Marcomira12/OrientadaObjetosAvancada.git  .
+
 O código foi refatorado diminuindo a influência da classe App nas funções do sistema, aplicando o conceito de Single Resoinsibility subdividindo as funções e metodos do
 código anterior em classes distintas e únicas com que possam ter uma função nítida e clara. Sendo assim, foram criadas subdivisões de pastas de operações que teriam contato
 com o cliente ou usúario e operações internas que não poderão ter interação direta. 
