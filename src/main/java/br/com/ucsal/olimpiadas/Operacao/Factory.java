@@ -22,6 +22,11 @@ public class Factory {
 	private CalcularNota calcularNota = new CalcularNota();
 	private EscolherParticipante escolherParticipante = new EscolherParticipante();
 	private ImprimirTabuleiroFen tabuleiro = new ImprimirTabuleiroFen();
+	private GerarTentativa tentativa= new GerarTentativa();
+
+	public GerarTentativa getTentativa() {
+		return tentativa;
+	}
 
 	private static final List<Acao> lista = new ArrayList<>();
 

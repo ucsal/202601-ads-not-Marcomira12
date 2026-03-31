@@ -33,11 +33,8 @@ public class AplicarProva extends Acao<Tentativa> {
 			return;
 		}
 
-		Tentativa tentativa = new Tentativa();
-		tentativa.setId(proximaTentativaId++);
-		tentativa.setParticipanteId(participanteId);
-		tentativa.setProvaId(provaId);
-
+		Tentativa tentativa = f.getTentativa().criar(f);
+		
 		System.out.println("\n--- Início da Prova ---");
 
 		for (var q : questoesDaProva) {
@@ -75,5 +72,10 @@ public class AplicarProva extends Acao<Tentativa> {
 		System.out.println("\n--- Fim da Prova ---");
 		System.out.println("Nota (acertos): " + nota + " / " + tentativa.getRespostas().size());
 	}
+
+	public int getProximaTentativaId() {
+		return proximaTentativaId;
+	}
+
 
 }

@@ -5,10 +5,7 @@ import br.com.ucsal.olimpiadas.*;
 public class CadastrarQuestao extends Acao<Questao>{
 	
 
-	private static int proximaQuestaoId = 1;
-	public static int getProximaQuestaoId() {
-		return proximaQuestaoId;
-	}
+	private int proximaQuestaoId = 1;
 
 	@Override
 	public void executar(Factory f) {

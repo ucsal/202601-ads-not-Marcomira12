@@ -8,6 +8,7 @@ public abstract class Acao<T> {
 
 	List<T> lista = new ArrayList<>();
 	
+
 	public List<T> getLista() {
 		return lista;
 	}

@@ -1,10 +1,6 @@
 package br.com.ucsal.olimpiadas.Operacao;
 
-import br.com.ucsal.olimpiadas.*;
-import br.com.ucsal.olimpiadas.OperacaoInterna.CalcularNota;
-
-import java.util.ArrayList;
-import java.util.List;
+import br.com.ucsal.olimpiadas.Tentativa;
 
 public class ListarTentativa extends Acao<Tentativa> {
 
