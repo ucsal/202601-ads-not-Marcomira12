@@ -9,6 +9,8 @@ permitindo extensão para a demais classes do tipo Acao e possuem Listas com tip
 uma classe Fatory para que seja responsavel pela inicialização das classes que serão utilizadas no código, permitindo com que as classes que possuem parâmetros direfentes na 
 execução do metodo possam ser padronizadas e sejam aplicadas polimorfismo sem que haja nenhuma incompatibilidade de parâmetros no método execucao().
 
+Foi aplicado o conceito de Liskov na classe AplicarProva em que foi gerada uma classe responsavel pela geração das estancias Tentativa para utilização no código no geral e foi criada uma interface Instanciar com metodo criar() que retornava um objeto, podendo assim ser estanciar mas não permitindo modificações.
+
 O principio de Dependency inversion foi atendido detalhes não depender de detalhes e sim de abstrações, evitando assim que caso haja alguma mudança ou acrescimo de uma 
 funcionalidade não deixaria o sistema instavel, sendo aplicado na List na classe abstrata com o tipo generico, possibilitando assim que seja possivel a implemnetação de mais
 um tipo de lista no sistema sem obrigar mudar a List e nem o getList() será alterado e o metodo abstrato com a classe Fatory passada como parametro, possibilitando alteração
