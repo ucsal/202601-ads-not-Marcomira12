@@ -17,7 +17,7 @@ public class AplicarProvaFactoryConcrete implements AplicarProvaFactoryAbstract{
 	@Override
 	public ValidacaoIsEmpty validarProvas() {
 		// TODO Auto-generated method stub
-		return new ValidacaoQuestaoProva();
+		return new ValidarCadastroProva();
 	}
 
 	@Override
@@ -37,6 +37,8 @@ public class AplicarProvaFactoryConcrete implements AplicarProvaFactoryAbstract{
 		// TODO Auto-generated method stub
 		return new BuscarIdQuestoesProva();
 	}
+
+	
 
 
 }

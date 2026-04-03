@@ -3,5 +3,5 @@ package interfaces;
 import br.com.ucsal.olimpiadas.Operacao.Controle;
 
 public interface ValidacaoIsEmpty {
-	boolean ValidacaoIsEmpty(Controle f);
+	boolean validacaoIsEmpty(Controle f);
 }

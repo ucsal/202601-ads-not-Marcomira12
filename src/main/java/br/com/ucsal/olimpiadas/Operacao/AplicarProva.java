@@ -1,9 +1,10 @@
 package br.com.ucsal.olimpiadas.Operacao;
 
 import java.util.List;
-import br.com.ucsal.olimpiadas.*;
-import interfaces.AplicarProvaFactoryAbstract;
-import interfaces.ClassesConcretas.AplicarProvaFactoryConcrete;
+
+import br.com.ucsal.olimpiadas.Questao;
+import br.com.ucsal.olimpiadas.Resposta;
+import br.com.ucsal.olimpiadas.Tentativa;
 
 public class AplicarProva extends Acao<Tentativa> {
 	private int proximaTentativaId = 1;
@@ -13,13 +14,15 @@ public class AplicarProva extends Acao<Tentativa> {
 
 		ContextoAplicacaoProva contexto = f.getPrepararAplicacaoProva().preparar(f);
 
-		if (contexto == null) {
+		if (contexto == null || contexto.getQuestoesDaProva().isEmpty())
 			return;
-		}
-
+		
 		List<Questao> questoesDaProva = contexto.getQuestoesDaProva();
 		
-		Tentativa tentativa = f.getCriarTentativa().criar(contexto.getParticipanteId(), proximaTentativaId++, contexto.getProvaId());
+		
+
+		Tentativa tentativa = f.getCriarTentativa().criar(contexto.getParticipanteId(), proximaTentativaId++,
+				contexto.getProvaId());
 
 		System.out.println("\n--- Início da Prova ---");
 

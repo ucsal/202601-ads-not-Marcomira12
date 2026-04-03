@@ -10,9 +10,9 @@ public class PrepararAplicacaoProva {
 	private AplicarProvaFactoryAbstract factoryAplicar = new AplicarProvaFactoryConcrete();
 
 	public ContextoAplicacaoProva preparar(Controle f) {
-		if(factoryAplicar.validarParticipantes().ValidacaoIsEmpty(f))
+		if(factoryAplicar.validarParticipantes().validacaoIsEmpty(f))
 			return null;
-		if(factoryAplicar.validarProvas().ValidacaoIsEmpty(f))
+		if(factoryAplicar.validarProvas().validacaoIsEmpty(f))
 			return null;
 		Integer participanteId= factoryAplicar.escolherParticipante().escolherId(f);
 		if(participanteId==null)
@@ -21,10 +21,6 @@ public class PrepararAplicacaoProva {
 		if(provaId==null)
 			return null;
 		List<Questao> questoesDaProva=factoryAplicar.buscarQuestoesDaProva().buscarIdList(f,provaId);
-		if(questoesDaProva==null) {
-			System.out.println("essa prova não possui questões");
-		    return null;
-		}
 		return new ContextoAplicacaoProva(participanteId, provaId, questoesDaProva);
 
 	}
