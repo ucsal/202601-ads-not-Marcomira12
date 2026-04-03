@@ -3,7 +3,7 @@ import br.com.ucsal.olimpiadas.*;
 import br.com.ucsal.olimpiadas.Operacao.*;
 
 public class EscolherProva{
-	public Long escolherProva(Factory f) {
+	public Integer escolherProva(Factory f) {
 		System.out.println("\nProvas:");
 		for (Prova p : f.getCadastraProva().getLista()) {
 			System.out.printf("  %d) %s%n", p.getId(), p.getTitulo());
@@ -11,7 +11,7 @@ public class EscolherProva{
 		System.out.print("Escolha o id da prova: ");
 
 		try {
-		    Long id = Long.parseLong(f.getIn().nextLine());
+		    Integer id = Integer.parseInt(f.getIn().nextLine());
 			boolean existe = f.getCadastraProva().getLista().stream().anyMatch(p -> p.getId() == id);
 			if (!existe) {
 				System.out.println("id inválido");

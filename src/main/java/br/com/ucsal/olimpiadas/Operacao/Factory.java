@@ -4,11 +4,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-import br.com.ucsal.olimpiadas.OperacaoInterna.CalcularNota;
-import br.com.ucsal.olimpiadas.OperacaoInterna.EscolherParticipante;
-import br.com.ucsal.olimpiadas.OperacaoInterna.EscolherProva;
-import br.com.ucsal.olimpiadas.OperacaoInterna.ImprimirTabuleiroFen;
-import br.com.ucsal.olimpiadas.OperacaoInterna.Seed;
+import br.com.ucsal.olimpiadas.OperacaoInterna.*;
+import interfaces.ClassesConcretas.BuscarIdQuestoesProva;
+import interfaces.ClassesConcretas.EscolherProvaId;
 
 public class Factory {
 	private Scanner in = new Scanner(System.in);
@@ -22,10 +20,12 @@ public class Factory {
 	private CalcularNota calcularNota = new CalcularNota();
 	private EscolherParticipante escolherParticipante = new EscolherParticipante();
 	private ImprimirTabuleiroFen tabuleiro = new ImprimirTabuleiroFen();
-	private GerarTentativa tentativa= new GerarTentativa();
-
-	public GerarTentativa getTentativa() {
-		return tentativa;
+	private EscolherProvaId escolherProvaId= new EscolherProvaId();
+	private BuscarIdQuestoesProva buscarIdQuestoesProva= new BuscarIdQuestoesProva();
+	private PrepararAplicacaoProva prepararAplicacaoProva = new PrepararAplicacaoProva();
+	
+	public PrepararAplicacaoProva getPrepararAplicacaoProva() {
+		return prepararAplicacaoProva;
 	}
 
 	private static final List<Acao> lista = new ArrayList<>();
@@ -39,6 +39,14 @@ public class Factory {
 			lista.add(aplicarProva);
 			lista.add(tentativas);
 		}
+	}
+
+	public EscolherProvaId getEscolherProvaId() {
+		return escolherProvaId;
+	}
+
+	public BuscarIdQuestoesProva getBuscarIdQuestoesProva() {
+		return buscarIdQuestoesProva;
 	}
 
 	public static List<Acao> getLista() {

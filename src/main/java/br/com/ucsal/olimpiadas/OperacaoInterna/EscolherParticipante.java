@@ -4,7 +4,7 @@ import br.com.ucsal.olimpiadas.Operacao.Factory;
 
 public class EscolherParticipante {
 
-	public Long escolherParticipante(Factory f) {
+	public Integer escolherParticipante(Factory f) {
 		System.out.println("\nParticipantes:");
 		for (var p : f.getCadastrar().getLista()) {
 			System.out.printf("  %d) %s%n", p.getId(), p.getNome());
@@ -13,7 +13,7 @@ public class EscolherParticipante {
 
 		try {
 
-		    Long id = Long.parseLong(f.getIn().nextLine());
+		    Integer id = Integer.parseInt(f.getIn().nextLine());
 
 			boolean existe = f.getCadastrar().getLista().stream().anyMatch(p -> p.getId() == id);
 			if (!existe) {

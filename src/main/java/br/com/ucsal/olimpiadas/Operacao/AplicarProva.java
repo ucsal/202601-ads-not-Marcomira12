@@ -1,6 +1,9 @@
 package br.com.ucsal.olimpiadas.Operacao;
-import br.com.ucsal.olimpiadas.*;
 
+import java.util.List;
+import br.com.ucsal.olimpiadas.*;
+import interfaces.AplicarProvaFactoryAbstract;
+import interfaces.ClassesConcretas.AplicarProvaFactoryConcrete;
 
 public class AplicarProva extends Acao<Tentativa> {
 	private int proximaTentativaId = 1;
@@ -8,33 +11,16 @@ public class AplicarProva extends Acao<Tentativa> {
 	@Override
 	public void executar(Factory f) {
 
-		if (f.getCadastrar().lista.isEmpty()) {
-			System.out.println("cadastre participantes primeiro");
-			return;
-		}
-		if (f.getCadastraProva().lista.isEmpty()) {
-			System.out.println("cadastre provas primeiro");
+		ContextoAplicacaoProva contexto = f.getPrepararAplicacaoProva().preparar(f);
+
+		if (contexto == null) {
 			return;
 		}
 
-		var participanteId = f.getEscolherParticipante().escolherParticipante(f);
-		if (participanteId == null)
-			return;
-		
-		
-		var provaId = f.getEscolherProva().escolherProva(f);
-		if (provaId == null)
-			return;
-
-		var questoesDaProva = f.getCadastrarQuestao().lista.stream().filter(q -> q.getProvaId() == provaId).toList();
-
-		if (questoesDaProva.isEmpty()) {
-			System.out.println("esta prova não possui questões cadastradas");
-			return;
-		}
+		List<Questao> questoesDaProva = contexto.getQuestoesDaProva();
 
 		Tentativa tentativa = f.getTentativa().criar(f);
-		
+
 		System.out.println("\n--- Início da Prova ---");
 
 		for (var q : questoesDaProva) {
@@ -76,6 +62,5 @@ public class AplicarProva extends Acao<Tentativa> {
 	public int getProximaTentativaId() {
 		return proximaTentativaId;
 	}
-
 
 }

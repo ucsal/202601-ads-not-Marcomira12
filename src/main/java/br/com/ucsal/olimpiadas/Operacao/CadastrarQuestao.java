@@ -14,7 +14,7 @@ public class CadastrarQuestao extends Acao<Questao>{
 			return;
 		}
 
-		Long provaId = f.getEscolherProva().escolherProva(f);
+		Integer provaId = f.getEscolherProva().escolherProva(f);
 		if (provaId == null)
 			return;
 
