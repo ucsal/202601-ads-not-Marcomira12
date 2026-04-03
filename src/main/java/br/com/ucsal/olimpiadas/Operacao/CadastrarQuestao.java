@@ -8,7 +8,7 @@ public class CadastrarQuestao extends Acao<Questao>{
 	private int proximaQuestaoId = 1;
 
 	@Override
-	public void executar(Factory f) {
+	public void executar(Controle f) {
 		if (f.getCadastraProva().lista.isEmpty()) {
 			System.out.println("não há provas cadastradas");
 			return;

@@ -7,5 +7,5 @@ public interface AplicarProvaFactoryAbstract {
     ValidacaoIsEmpty validarProvas();
     VerificarId escolherParticipante();
     VerificarId escolherProva();
-    BuscarIdList<Questao> buscarQuestoesDaProva();
+    BuscarIdListQuestao<Questao> buscarQuestoesDaProva();
 }	

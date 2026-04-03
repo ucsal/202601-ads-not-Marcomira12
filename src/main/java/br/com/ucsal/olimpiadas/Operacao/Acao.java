@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Acao<T> {
-	public abstract void executar(Factory f);
+	public abstract void executar(Controle f);
 
 	List<T> lista = new ArrayList<>();
 	

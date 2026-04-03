@@ -3,7 +3,7 @@ import br.com.ucsal.olimpiadas.*;
 import br.com.ucsal.olimpiadas.Operacao.*;
 
 public class EscolherProva{
-	public Integer escolherProva(Factory f) {
+	public Integer escolherProva(Controle f) {
 		System.out.println("\nProvas:");
 		for (Prova p : f.getCadastraProva().getLista()) {
 			System.out.printf("  %d) %s%n", p.getId(), p.getTitulo());

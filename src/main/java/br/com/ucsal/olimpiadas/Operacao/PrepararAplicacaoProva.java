@@ -9,7 +9,7 @@ import interfaces.ClassesConcretas.AplicarProvaFactoryConcrete;
 public class PrepararAplicacaoProva {
 	private AplicarProvaFactoryAbstract factoryAplicar = new AplicarProvaFactoryConcrete();
 
-	public ContextoAplicacaoProva preparar(Factory f) {
+	public ContextoAplicacaoProva preparar(Controle f) {
 		if(factoryAplicar.validarParticipantes().ValidacaoIsEmpty(f))
 			return null;
 		if(factoryAplicar.validarProvas().ValidacaoIsEmpty(f))
@@ -20,7 +20,7 @@ public class PrepararAplicacaoProva {
 		Integer provaId= factoryAplicar.escolherProva().escolherId(f);
 		if(provaId==null)
 			return null;
-		List<Questao> questoesDaProva=factoryAplicar.buscarQuestoesDaProva().buscarIdList(f);
+		List<Questao> questoesDaProva=factoryAplicar.buscarQuestoesDaProva().buscarIdList(f,provaId);
 		if(questoesDaProva==null) {
 			System.out.println("essa prova não possui questões");
 		    return null;

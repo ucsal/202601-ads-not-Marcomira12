@@ -3,13 +3,13 @@ package br.com.ucsal.olimpiadas.OperacaoInterna;
 import br.com.ucsal.olimpiadas.Prova;
 import br.com.ucsal.olimpiadas.Questao;
 import br.com.ucsal.olimpiadas.Operacao.CadastrarProva;
-import br.com.ucsal.olimpiadas.Operacao.Factory;
+import br.com.ucsal.olimpiadas.Operacao.Controle;
 
 public class Seed {
 	
 private int proximaQuestaoId = 1;
 	
-	public void seed(Factory f) {
+	public void seed(Controle f) {
 
 		Prova prova = new Prova();
 		

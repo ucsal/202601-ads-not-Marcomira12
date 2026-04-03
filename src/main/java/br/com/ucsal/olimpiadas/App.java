@@ -1,11 +1,11 @@
 package br.com.ucsal.olimpiadas;
-import br.com.ucsal.olimpiadas.Operacao.Factory;
+import br.com.ucsal.olimpiadas.Operacao.Controle;
 
 
 public class App {
 
 		public static void main(String[] args) {
-			Factory ope = new Factory();
+			Controle ope = new Controle();
 			ope.getSeed().seed(ope);;
 
 			while (true) {

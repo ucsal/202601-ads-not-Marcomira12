@@ -9,7 +9,7 @@ public class AplicarProva extends Acao<Tentativa> {
 	private int proximaTentativaId = 1;
 
 	@Override
-	public void executar(Factory f) {
+	public void executar(Controle f) {
 
 		ContextoAplicacaoProva contexto = f.getPrepararAplicacaoProva().preparar(f);
 
@@ -18,8 +18,8 @@ public class AplicarProva extends Acao<Tentativa> {
 		}
 
 		List<Questao> questoesDaProva = contexto.getQuestoesDaProva();
-
-		Tentativa tentativa = f.getTentativa().criar(f);
+		
+		Tentativa tentativa = f.getCriarTentativa().criar(contexto.getParticipanteId(), proximaTentativaId++, contexto.getProvaId());
 
 		System.out.println("\n--- Início da Prova ---");
 

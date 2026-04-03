@@ -1,7 +1,7 @@
 package interfaces;
 
-import br.com.ucsal.olimpiadas.Operacao.Factory;
+import br.com.ucsal.olimpiadas.Operacao.Controle;
 
 public interface VerificarId {
-	Integer escolherId(Factory f);
+	Integer escolherId(Controle f);
 }

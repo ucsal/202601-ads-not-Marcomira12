@@ -1,14 +1,16 @@
 package br.com.ucsal.olimpiadas.Operacao;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 import br.com.ucsal.olimpiadas.OperacaoInterna.*;
+import criarObjetos.CriarTentativa;
 import interfaces.ClassesConcretas.BuscarIdQuestoesProva;
 import interfaces.ClassesConcretas.EscolherProvaId;
 
-public class Factory {
+public class Controle {
 	private Scanner in = new Scanner(System.in);
 	private CadastrarParticipante cadastrar = new CadastrarParticipante();
 	private CadastrarProva cadastraProva = new CadastrarProva();
@@ -16,22 +18,18 @@ public class Factory {
 	private EscolherProva escolherProva = new EscolherProva();
 	private AplicarProva aplicarProva = new AplicarProva();
 	private ListarTentativa tentativas = new ListarTentativa();
-	private Seed seed= new Seed();
+	private Seed seed = new Seed();
 	private CalcularNota calcularNota = new CalcularNota();
 	private EscolherParticipante escolherParticipante = new EscolherParticipante();
 	private ImprimirTabuleiroFen tabuleiro = new ImprimirTabuleiroFen();
-	private EscolherProvaId escolherProvaId= new EscolherProvaId();
-	private BuscarIdQuestoesProva buscarIdQuestoesProva= new BuscarIdQuestoesProva();
+	private EscolherProvaId escolherProvaId = new EscolherProvaId();
+	private BuscarIdQuestoesProva buscarIdQuestoesProva = new BuscarIdQuestoesProva();
 	private PrepararAplicacaoProva prepararAplicacaoProva = new PrepararAplicacaoProva();
-	
-	public PrepararAplicacaoProva getPrepararAplicacaoProva() {
-		return prepararAplicacaoProva;
-	}
+	private CriarTentativa criarTentativa = new CriarTentativa();
 
 	private static final List<Acao> lista = new ArrayList<>();
 
-	
-	public Factory() {
+	public Controle() {
 		if (lista.isEmpty()) {
 			lista.add(cadastrar);
 			lista.add(cadastraProva);
@@ -49,9 +47,17 @@ public class Factory {
 		return buscarIdQuestoesProva;
 	}
 
+	public PrepararAplicacaoProva getPrepararAplicacaoProva() {
+		return prepararAplicacaoProva;
+	}
+
+	public CriarTentativa getCriarTentativa() {
+		return criarTentativa;
+	}
+
 	public static List<Acao> getLista() {
-        return Collections.unmodifiableList(lista);
-    }
+		return Collections.unmodifiableList(lista);
+	}
 
 	public ImprimirTabuleiroFen getTabuleiro() {
 		return tabuleiro;
@@ -96,7 +102,5 @@ public class Factory {
 	public Seed getSeed() {
 		return seed;
 	}
-
-	
 
 }

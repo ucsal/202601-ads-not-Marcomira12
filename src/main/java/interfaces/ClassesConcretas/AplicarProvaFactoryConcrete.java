@@ -1,8 +1,8 @@
 package interfaces.ClassesConcretas;
 
 import br.com.ucsal.olimpiadas.Questao;
-import interfaces.BuscarIdList;
 import interfaces.AplicarProvaFactoryAbstract;
+import interfaces.BuscarIdListQuestao;
 import interfaces.ValidacaoIsEmpty;
 import interfaces.VerificarId;
 
@@ -33,7 +33,7 @@ public class AplicarProvaFactoryConcrete implements AplicarProvaFactoryAbstract{
 	}
 
 	@Override
-	public BuscarIdList<Questao> buscarQuestoesDaProva() {
+	public BuscarIdListQuestao<Questao> buscarQuestoesDaProva() {
 		// TODO Auto-generated method stub
 		return new BuscarIdQuestoesProva();
 	}

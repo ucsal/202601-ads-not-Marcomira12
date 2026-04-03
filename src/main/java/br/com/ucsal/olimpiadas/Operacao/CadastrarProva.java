@@ -11,7 +11,7 @@ public class CadastrarProva extends Acao<Prova> {
 	}
 
 	@Override
-	public void executar(Factory f) {
+	public void executar(Controle f) {
 		System.out.print("Título da prova: ");
 		String titulo = f.getIn().nextLine();
 

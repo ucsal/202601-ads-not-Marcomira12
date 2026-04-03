@@ -1,10 +1,10 @@
 package br.com.ucsal.olimpiadas.OperacaoInterna;
 
-import br.com.ucsal.olimpiadas.Operacao.Factory;
+import br.com.ucsal.olimpiadas.Operacao.Controle;
 
 public class EscolherParticipante {
 
-	public Integer escolherParticipante(Factory f) {
+	public Integer escolherParticipante(Controle f) {
 		System.out.println("\nParticipantes:");
 		for (var p : f.getCadastrar().getLista()) {
 			System.out.printf("  %d) %s%n", p.getId(), p.getNome());

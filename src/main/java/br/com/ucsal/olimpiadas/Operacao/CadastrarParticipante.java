@@ -6,7 +6,7 @@ public class CadastrarParticipante extends Acao<Participante> {
 
 
 	@Override
-	public void executar(Factory f) {
+	public void executar(Controle f) {
 		System.out.print("Nome: ");
 		String nome = f.getIn().nextLine();
 
