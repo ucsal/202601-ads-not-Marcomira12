@@ -16,10 +16,8 @@ public class AplicarProva extends Acao<Tentativa> {
 
 		if (contexto == null || contexto.getQuestoesDaProva().isEmpty())
 			return;
-		
+
 		List<Questao> questoesDaProva = contexto.getQuestoesDaProva();
-		
-		
 
 		Tentativa tentativa = f.getCriarTentativa().criar(contexto.getParticipanteId(), proximaTentativaId++,
 				contexto.getProvaId());
@@ -60,10 +58,6 @@ public class AplicarProva extends Acao<Tentativa> {
 		int nota = f.getCalcularNota().calcularNota(tentativa);
 		System.out.println("\n--- Fim da Prova ---");
 		System.out.println("Nota (acertos): " + nota + " / " + tentativa.getRespostas().size());
-	}
-
-	public int getProximaTentativaId() {
-		return proximaTentativaId;
 	}
 
 }
