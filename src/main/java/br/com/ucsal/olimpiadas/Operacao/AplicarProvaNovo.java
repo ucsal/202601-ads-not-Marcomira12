@@ -4,12 +4,12 @@ import br.com.ucsal.olimpiadas.Questao;
 import br.com.ucsal.olimpiadas.Resposta;
 import br.com.ucsal.olimpiadas.Tentativa;
 
-public class AplicarProva extends Acao<Tentativa> {
-	private int proximaTentativaId = 1;
+public class AplicarProvaNovo implements Execucao {
+	
+	
 
 	@Override
-	public void executar(Controle f) {
-
+	public void executarAcao() {
 		ContextoAplicacaoProva contexto = f.getPrepararAplicacaoProva().preparar(f);
 
 		if (contexto == null || contexto.getQuestoesDaProva().isEmpty())
@@ -55,6 +55,8 @@ public class AplicarProva extends Acao<Tentativa> {
 		int nota = f.getCalcularNota().calcularNota(tentativa);
 		System.out.println("\n--- Fim da Prova ---");
 		System.out.println("Nota (acertos): " + nota + " / " + tentativa.getRespostas().size());
+	}
+
 	}
 
 }

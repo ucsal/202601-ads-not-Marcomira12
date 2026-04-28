@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Questao {
 
-	private long id;
+	private Integer id;
 	private long provaId;
 
 	private String enunciado;
@@ -21,11 +21,11 @@ public class Questao {
 		this.fenInicial = fenInicial;
 	}
 
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
